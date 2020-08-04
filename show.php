@@ -7,4 +7,6 @@ if (!file_exists("done/$date/$hash")) {
 }
 
 $reponse = json_decode(file_get_contents("done/$date/$hash"));
-var_dump($reponse);
+
+header('Content-Type: application/json');
+echo json_encode($reponse);
