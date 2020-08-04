@@ -43,7 +43,7 @@ $reponse = json_decode(file_get_contents("done/$date/$hash"), true);
         </tr>
     <?php endforeach; ?>
 </table>
-<h2>Legend</h2>
+<p><strong>Legend</strong></p>
 <ol>
     <li>Domain to which connections where made</li>
     <li>Ping time to the domain in milliseconds</li>
