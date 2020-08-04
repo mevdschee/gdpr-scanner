@@ -25,9 +25,9 @@ $reponse = json_decode(file_get_contents("done/$date/$hash"), true);
             <th>Organization</th>
         </tr>
         <?php foreach ($reponse['lines'] as $line) : ?>
-            <tr style="border-bottom: 1px solid black">
+            <tr>
                 <?php foreach ($line as $cell) : ?>
-                    <td><?php echo htmlentities($cell); ?></td>
+                    <td style="border-bottom: 1px solid black"><?php echo htmlentities($cell); ?></td>
                 <?php endforeach; ?>
             </tr>
         <?php endforeach; ?>
