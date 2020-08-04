@@ -45,11 +45,13 @@ $reponse = json_decode(file_get_contents("done/$date/$hash"), true);
     <?php endforeach;?>
 </table>
 <p>
-    1) Domain to which connections where made (Chromium browser)<br />
-    2) Ping time to the domain in milliseconds (TCPing to port 443)<br />
-    3) EU country for domain's IP address (source: <a href="https://ip-api.com">ip-api.com</a>)<br />
-    4) Country of the domain's IP address (source: <a href="https://ip-api.com">ip-api.com</a>)<br />
-    5) Organization of the domain's IP address (source: <a href="https://ip-api.com">ip-api.com</a>)<br />
+    1) Domain to which connections where made<br />
+    2) Ping time to the domain in milliseconds<br />
+    3) EU country for domain's IP address<br />
+    4) Country of the domain's IP address<br />
+    5) Organization of the domain's IP address<br />
+
+    (GeoIP source: <a href="https://ip-api.com">ip-api.com</a>)
 </p>
 <form action="../"><input type="submit" value="Close" /></form>
 <?php include 'footer.php';?>
