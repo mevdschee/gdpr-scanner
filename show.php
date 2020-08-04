@@ -17,7 +17,7 @@ $reponse = json_decode(file_get_contents("done/$date/$hash"), true);
 
 <body>
     <h1><?php echo $reponse['url']; ?></h1>
-    <table cellspacing="0" cellpadding="0" style="border: 1px solid black">
+    <table cellspacing="0" cellpadding="0">
         <tr>
             <th>Domain</th>
             <th>Latency (ms.)</th>
