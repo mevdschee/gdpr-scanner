@@ -51,7 +51,7 @@ $reponse = json_decode(file_get_contents("done/$date/$hash"), true);
     4) Country of the domain's IP address<br />
     5) Organization of the domain's IP address<br />
     <br/>
-    (GeoIP source: <a href="https://ip-api.com">ip-api.com</a>)
+    (IP information from: <a href="https://ip-api.com">ip-api.com</a>)
 </p>
 <form action="../"><input type="submit" value="Close" /></form>
 <?php include 'footer.php';?>
