@@ -18,6 +18,12 @@ $reponse = json_decode(file_get_contents("done/$date/$hash"), true);
 <body>
     <h1><?php echo $reponse['url']; ?></h1>
     <table>
+        <th>
+        <td>Domain</td>
+        <td>Latency</td>
+        <td>Country</td>
+        <td>Organization</td>
+        </th>
         <?php foreach ($reponse['lines'] as $line) : ?>
             <tr>
                 <?php foreach ($line as $cell) : ?>
