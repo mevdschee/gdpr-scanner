@@ -14,6 +14,10 @@ $reponse = json_decode(file_get_contents("done/$date/$hash"), true);
 <head>
     <title>GDPR scanner</title>
     <style>
+        th {
+            text-align: left;
+        }
+
         th,
         td {
             padding: 2px;
