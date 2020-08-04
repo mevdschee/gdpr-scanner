@@ -13,11 +13,22 @@ $reponse = json_decode(file_get_contents("done/$date/$hash"), true);
 
 <head>
     <title>GDPR scanner</title>
+    <style>
+        th,
+        td {
+            padding: 2px;
+            padding-right: 10px;
+        }
+
+        td {
+            border-top: 1px solid black
+        }
+    </style>
 </head>
 
 <body>
     <h1><?php echo $reponse['url']; ?></h1>
-    <table cellspacing="0" cellpadding="0">
+    <table>
         <tr>
             <th>Domain</th>
             <th>Ping &nbsp;</th>
@@ -28,7 +39,7 @@ $reponse = json_decode(file_get_contents("done/$date/$hash"), true);
         <?php foreach ($reponse['lines'] as $line) : ?>
             <tr>
                 <?php foreach ($line as $cell) : ?>
-                    <td style="padding: 2px; padding-right: 10px; border-top: 1px solid black"><?php echo htmlentities($cell); ?></td>
+                    <td><?php echo htmlentities($cell); ?></td>
                 <?php endforeach; ?>
             </tr>
         <?php endforeach; ?>
