@@ -45,7 +45,7 @@ $reponse = json_decode(file_get_contents("done/$date/$hash"), true);
 </table>
 <ol>
     <li>Domain to which connections where made</li>
-    <li>Latency to the domain in milliseconds</li>
+    <li>Ping time to the domain in milliseconds</li>
     <li>EU country for domain's IP address</li>
     <li>Country of the domain's IP address</li>
     <li>Organization of the domain's IP address</li>
