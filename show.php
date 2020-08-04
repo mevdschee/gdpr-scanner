@@ -16,9 +16,9 @@ $reponse = json_decode(file_get_contents("done/$date/$hash"), true);
 </head>
 
 <body>
-    <h1><?php echo $request['url']; ?></h1>
+    <h1><?php echo $reponse['url']; ?></h1>
     <table>
-        <?php foreach ($request['lines'] as $line) : ?>
+        <?php foreach ($reponse['lines'] as $line) : ?>
             <tr>
                 <?php foreach ($line as $cell) : ?>
                     <td><?php echo htmlentities($cell); ?></td>
