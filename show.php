@@ -1,6 +1,6 @@
 <?php
 
-$hash = $_SERVER['PATH_INFO'];
+$hash = trim($_SERVER['PATH_INFO'], '/');
 $date = gmdate("Y-m-d");
 if (!file_exists("done/$date/$hash")) {
     die(header('Location: ./'));
