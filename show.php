@@ -17,7 +17,7 @@ $reponse = json_decode(file_get_contents("done/$date/$hash"), true);
 
 <body>
     <h1><?php echo $reponse['url']; ?></h1>
-    <table callpadding="2" cellspacing="2" style="border: 1px solid black">
+    <table style="border: 1px solid black">
         <tr>
             <th>Domain</th>
             <th>Latency (ms.)</th>
@@ -27,7 +27,7 @@ $reponse = json_decode(file_get_contents("done/$date/$hash"), true);
         <?php foreach ($reponse['lines'] as $line) : ?>
             <tr>
                 <?php foreach ($line as $cell) : ?>
-                    <td style="border-bottom: 1px solid black"><?php echo htmlentities($cell); ?></td>
+                    <td style="padding-right: 10px; border-top: 1px solid black"><?php echo htmlentities($cell); ?></td>
                 <?php endforeach; ?>
             </tr>
         <?php endforeach; ?>
