@@ -2,6 +2,9 @@
 include 'config.php';
 
 $url = $_POST['url'];
+if (substr($url, 0, 4) != 'http') {
+    $url = "http://$url";
+}
 if (!filter_var($url, FILTER_VALIDATE_URL)) {
     die(header('Location: ./'));
 }
