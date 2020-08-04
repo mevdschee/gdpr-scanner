@@ -28,7 +28,7 @@ $reponse = json_decode(file_get_contents("done/$date/$hash"), true);
         <?php foreach ($reponse['lines'] as $line) : ?>
             <tr>
                 <?php foreach ($line as $cell) : ?>
-                    <td style="padding-right: 10px; border-top: 1px solid black"><?php echo htmlentities($cell); ?></td>
+                    <td style="padding: 2px; padding-right: 10px; border-top: 1px solid black"><?php echo htmlentities($cell); ?></td>
                 <?php endforeach; ?>
             </tr>
         <?php endforeach; ?>
