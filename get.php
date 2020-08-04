@@ -8,7 +8,7 @@ if ($_POST['password'] != $password) {
 $dir = scandir('todo');
 foreach ($dir as $hash) {
     if (is_file("todo/$hash")) {
-        $request = json_decode(file_get_contents("todo/$hash"));
+        $request = json_decode(file_get_contents("todo/$hash"), true);
         $salt = $request['salt'];
         $url = $request['url'];
         if (sha1($salt . $url) == $hash) {
