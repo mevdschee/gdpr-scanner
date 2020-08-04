@@ -36,7 +36,7 @@ $reponse = json_decode(file_get_contents("done/$date/$hash"), true);
         <tr>
             <th>Domain</th>
             <th>Ping &nbsp;</th>
-            <th>EU?</th>
+            <th>EU</th>
             <th>Country</th>
             <th>Organization</th>
         </tr>
