@@ -33,6 +33,7 @@ $reponse = json_decode(file_get_contents("done/$date/$hash"), true);
             </tr>
         <?php endforeach; ?>
     </table>
+    <br />
     <form action="../"><input type="submit" value="Close" /></form>
 </body>
 
