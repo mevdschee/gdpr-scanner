@@ -28,7 +28,7 @@ $reponse = json_decode(file_get_contents("done/$date/$hash"), true);
 
 <body>
     <h1><?php echo $reponse['url']; ?></h1>
-    <table>
+    <table cellspacing="0">
         <tr>
             <th>Domain</th>
             <th>Ping &nbsp;</th>
