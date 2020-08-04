@@ -6,4 +6,4 @@ if (!file_exists("done/$date/$hash")) {
     die('<meta http-equiv="refresh" content="1"><form action="../">Wait.. <input type="submit" value="Cancel".></form>');
 }
 
-header('Location: show.php/' . $hash);
+header('Location: ../show.php/' . $hash);
