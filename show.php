@@ -22,6 +22,7 @@ $reponse = json_decode(file_get_contents("done/$date/$hash"), true);
             <th>Domain</th>
             <th>Latency (ms.)</th>
             <th>EU?</th>
+            <th>Country</th>
             <th>Organization</th>
         </tr>
         <?php foreach ($reponse['lines'] as $line) : ?>
