@@ -6,7 +6,26 @@ if (!file_exists("done/$date/$hash")) {
     die(header('Location: ./'));
 }
 
-$reponse = json_decode(file_get_contents("done/$date/$hash"));
+$reponse = json_decode(file_get_contents("done/$date/$hash"), true);
 
-header('Content-Type: application/json');
-echo json_encode($reponse);
+?>
+<html>
+
+<head>
+    <title>GDPR scanner</title>
+</head>
+
+<body>
+    <h1><?php echo $request['url']; ?></h1>
+    <table>
+        <?php foreach ($request['lines'] as $line) : ?>
+            <tr>
+                <?php foreach ($line as $cell) : ?>
+                    <td><?php echo htmlentities($cell); ?></td>
+                <?php endforeach; ?>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+</body>
+
+</html>
