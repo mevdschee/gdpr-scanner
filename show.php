@@ -20,7 +20,7 @@ $reponse = json_decode(file_get_contents("done/$date/$hash"), true);
     <table cellspacing="0" cellpadding="0">
         <tr>
             <th>Domain</th>
-            <th>Latency (ms.)</th>
+            <th>Ping</th>
             <th>EU?</th>
             <th>Country</th>
             <th>Organization</th>
