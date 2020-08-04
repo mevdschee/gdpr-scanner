@@ -43,14 +43,10 @@ $reponse = json_decode(file_get_contents("done/$date/$hash"), true);
         </tr>
     <?php endforeach; ?>
 </table>
-<p><strong>Legend</strong></p>
-<ol>
-    <li>Domain to which connections where made</li>
-    <li>Ping time to the domain in milliseconds</li>
-    <li>EU country for domain's IP address</li>
-    <li>Country of the domain's IP address</li>
-    <li>Organization of the domain's IP address</li>
-</ol>
-<br />
+<p id="footnote-1">[1] Domain to which connections where made</p>
+<p id="footnote-2">[2] Ping time to the domain in milliseconds</p>
+<p id="footnote-3">[3] EU country for domain's IP address</p>
+<p id="footnote-4">[4] Country of the domain's IP address</p>
+<p id="footnote-5">[5] Organization of the domain's IP address</p>
 <form action="../"><input type="submit" value="Close" /></form>
 <?php include 'footer.php'; ?>
