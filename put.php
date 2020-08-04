@@ -5,7 +5,7 @@ if ($_POST['password'] != $password) {
     die('Access denied');
 }
 
-$response = json_decode($_POST['response']);
+$response = json_decode($_POST['response'], true);
 $salt = $response['salt'];
 $url = $response['url'];
 $hash = sha1($salt . $url);
