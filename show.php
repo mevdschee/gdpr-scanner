@@ -50,7 +50,7 @@ $reponse = json_decode(file_get_contents("done/$date/$hash"), true);
     3) EU country for domain's IP address<br />
     4) Country of the domain's IP address<br />
     5) Organization of the domain's IP address<br />
-
+    <br/>
     (GeoIP source: <a href="https://ip-api.com">ip-api.com</a>)
 </p>
 <form action="../"><input type="submit" value="Close" /></form>
