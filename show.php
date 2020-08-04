@@ -27,6 +27,7 @@ $reponse = json_decode(file_get_contents("done/$date/$hash"), true);
 </style>
 
 <h1><?php echo $reponse['url']; ?></h1>
+<p>Scanner location: Amsterdam</p>
 <table cellspacing="0">
     <tr>
         <th>Domain<sup>1</sup></th>
