@@ -2,6 +2,7 @@
 include 'config.php';
 
 $url = $_POST['url'];
+$url = preg_replace('|[^A-Za-z0-9-\._~:/]|', '', $url);
 if (strtolower(substr($url, 0, 4)) != 'http') {
     $url = "https://$url";
 }
