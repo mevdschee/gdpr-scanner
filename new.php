@@ -2,7 +2,7 @@
 include 'config.php';
 
 $url = $_POST['url'];
-if (substr($url, 0, 4) != 'http') {
+if (strtolower(substr($url, 0, 4)) != 'http') {
     $url = "https://$url";
 }
 if (!filter_var($url, FILTER_VALIDATE_URL)) {
