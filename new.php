@@ -8,6 +8,7 @@ if (substr($url, 0, 4) != 'http') {
 if (!filter_var($url, FILTER_VALIDATE_URL)) {
     die(header('Location: ./'));
 }
+$url = preg_replace('|[^A-Za-z0-9-\._~:/]|', '', $url);
 
 $salt = bin2hex(openssl_random_pseudo_bytes(12));
 $hash = sha1($salt . $url);
