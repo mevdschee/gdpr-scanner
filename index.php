@@ -8,4 +8,5 @@
     <br /><br />
     <input type="submit" value="Scan" />
 </form>
+<p>You can see a sample scan result <a href="https://tqdev.com/gdpr-scanner/show.php/711ba0aead1e343ccc9eaa05e61932d6835cc0c7">here</a></p>
 <?php include 'footer.php';?>
