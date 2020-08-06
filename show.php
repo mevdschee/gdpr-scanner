@@ -5,7 +5,7 @@ $hash = substr($filename, 8);
 if (!file_exists("done/$date/$hash")) {
     die(header('Location: ./'));
 }
-$reponse = json_decode(file_get_contents("done/$date/$hash"), true);
+$reponse = json_decode(gzuncompress(file_get_contents("done/$date/$hash"), true));
 
 ?>
 <?php include 'header.php';?>
@@ -30,7 +30,7 @@ $reponse = json_decode(file_get_contents("done/$date/$hash"), true);
     }
 </style>
 <h1><?php echo $reponse['url']; ?></h1>
-<p>Scan date: <?php echo DateTime::createFromFormat('Ymd', $date)->format('Y-m-d'); ?></p>
+<p>Scan date: <?php echo date('Y-m-d H:i:s', $reponse['time']); ?></p>
 <p>Scanner location: Amsterdam</p>
 <table cellspacing="0">
     <tr>

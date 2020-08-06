@@ -11,8 +11,9 @@ if (!filter_var($url, FILTER_VALIDATE_URL)) {
 }
 
 $salt = bin2hex(openssl_random_pseudo_bytes(12));
+$time = time();
 $date = gmdate('Ymd');
 $hash = sha1($salt . $url);
 $filename = $date . $hash;
-file_put_contents("todo/$filename", json_encode(['date' => $date, 'salt' => $salt, 'url' => $url]));
+file_put_contents("todo/$filename", gzcompress(json_encode(['time' => $time, 'salt' => $salt, 'url' => $url])));
 header('Location: wait.php/' . $filename);

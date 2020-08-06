@@ -6,7 +6,8 @@ if ($_POST['password'] != $password) {
 }
 
 $response = json_decode($_POST['response'], true);
-$date = $response['date'];
+$time = $response['time'];
+$date = gmdate('Ymd', $time);
 $salt = $response['salt'];
 $url = $response['url'];
 $hash = sha1($salt . $url);
@@ -16,5 +17,5 @@ if (!file_exists("done/$date")) {
 }
 
 if ($response) {
-    file_put_contents("done/$date/$hash", json_encode($response));
+    file_put_contents("done/$date/$hash", gzcompress(json_encode($response)));
 }
