@@ -23,10 +23,15 @@ $reponse = json_decode(file_get_contents("done/$date/$hash"), true);
     td {
         border-top: 1px solid black
     }
+    small{
+        font-size: smaller;
+    }
 </style>
 
-<h1><?php echo $reponse['url']; ?></h1>
-<p><?php echo $filename; ?></p>
+<h1>
+    <?php echo $reponse['url']; ?>
+    <small><?php echo $filename; ?></small>
+</h1>
 <p>Scan date: <?php echo DateTime::createFromFormat('Ymd', $date)->format('Y-m-d'); ?></p>
 <p>Scanner location: Amsterdam</p>
 <table cellspacing="0">
