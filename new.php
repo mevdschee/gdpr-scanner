@@ -15,5 +15,5 @@ $time = time();
 $date = gmdate('Ymd', $time);
 $hash = sha1($salt . $url);
 $filename = $date . $hash;
-file_put_contents("todo/$filename", json_encode(['time' => $time, 'salt' => $salt, 'url' => $url]));
+file_put_contents("todo/$filename", gzdeflate(json_encode(['time' => $time, 'salt' => $salt, 'url' => $url])));
 header('Location: wait.php/' . $filename);
