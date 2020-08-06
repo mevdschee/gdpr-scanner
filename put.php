@@ -17,5 +17,5 @@ if (!file_exists("done/$date")) {
 }
 
 if ($response) {
-    file_put_contents("done/$date/$hash", gzdeflate(json_encode($response)));
+    file_put_contents("done/$date/$hash", gzcompress(json_encode($response)));
 }

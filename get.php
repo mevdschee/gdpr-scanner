@@ -8,7 +8,7 @@ if ($_POST['password'] != $password) {
 $dir = scandir('todo');
 foreach ($dir as $filename) {
     if (is_file("todo/$filename")) {
-        $request = json_decode(gzinflate(file_get_contents("todo/$filename")), true);
+        $request = json_decode(gzuncompress(file_get_contents("todo/$filename")), true);
         $time = $request['time'];
         $date = gmdate('Ymd', $time);
         $salt = $request['salt'];
