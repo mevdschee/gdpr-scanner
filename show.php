@@ -29,7 +29,6 @@ $reponse = json_decode(file_get_contents("done/$date/$hash"), true);
         font-size: 8px;
     }
 </style>
-
 <h1><?php echo $reponse['url']; ?></h1>
 <p>Scan date: <?php echo DateTime::createFromFormat('Ymd', $date)->format('Y-m-d'); ?></p>
 <p>Scanner location: Amsterdam</p>
@@ -58,5 +57,5 @@ $reponse = json_decode(file_get_contents("done/$date/$hash"), true);
     *) IP address information from: <a href="https://ip-api.com">ip-api.com</a>
 </p>
 <form action="../"><input type="submit" value="Close" /></form>
-<p><small><?php echo $filename; ?></small></p>
 <?php include 'footer.php';?>
+<!-- <?php echo $filename; ?> -->
