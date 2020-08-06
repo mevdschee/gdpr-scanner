@@ -14,5 +14,5 @@ $salt = bin2hex(openssl_random_pseudo_bytes(12));
 $date = gmdate('Ymd');
 $hash = sha1($salt . $url);
 $filename = $date . $hash;
-file_put_contents("todo/$filename", json_encode(['salt' => $salt, 'url' => $url]));
+file_put_contents("todo/$filename", json_encode(['date' => $date, 'salt' => $salt, 'url' => $url]));
 header('Location: wait.php/' . $filename);
