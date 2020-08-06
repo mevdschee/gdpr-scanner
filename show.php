@@ -5,7 +5,7 @@ $hash = substr($filename, 8);
 if (!file_exists("done/$date/$hash")) {
     die(header('Location: ./'));
 }
-$reponse = json_decode(gzuncompress(file_get_contents("done/$date/$hash")), true);
+$reponse = json_decode(gzdecode(file_get_contents("done/$date/$hash.gz")), true);
 
 ?>
 <?php include 'header.php';?>
