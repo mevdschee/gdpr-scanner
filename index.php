@@ -1,4 +1,4 @@
-<?php include 'header.php';?>
+<?php include 'header.php'; ?>
 <a href="https://github.com/mevdschee/gdpr-scanner"><img src="forkme_right_darkblue_121621.svg" style="position:absolute;top:0;right:0;" alt="Fork me on GitHub"></a>
 <h1>GDPR scanner</h1>
 <p>For more information, read the <a href="https://tqdev.com/2020-free-gdpr-scanner-online">TQdev Blog</a> about the scanner.</p>
@@ -8,5 +8,5 @@
     <br /><br />
     <input type="submit" value="Scan" />
 </form>
-<p>You can see a sample scan result <a href="https://tqdev.com/gdpr-scanner/show.php/711ba0aead1e343ccc9eaa05e61932d6835cc0c7">here</a></p>
-<?php include 'footer.php';?>
+<p>You can see a sample scan result <a href="https://tqdev.com/gdpr-scanner/show.php/202008063bc033db491c4a130fe948ea14bd37611f938a5e">here</a></p>
+<?php include 'footer.php'; ?>
