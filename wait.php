@@ -1,10 +1,11 @@
 <?php
-$hash = trim($_SERVER['PATH_INFO'], '/');
-$date = gmdate("Y-m-d");
+$filename = trim($_SERVER['PATH_INFO'], '/');
+$date = substr($filename, 0, 8);
+$hash = substr($filename, 8);
 if (file_exists("done/$date/$hash")) {
-    die(header('Location: ../show.php/' . $hash));
+    die(header('Location: ../show.php/' . $filename));
 }
-$text = file_exists("todo/$hash") ? 'Wait' : 'Executing';
+$text = file_exists("todo/$filename") ? 'Wait' : 'Executing';
 ?>
 <?php include 'header.php'; ?>
 <form action="../">

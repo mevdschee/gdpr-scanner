@@ -6,10 +6,10 @@ if ($_POST['password'] != $password) {
 }
 
 $response = json_decode($_POST['response'], true);
+$date = $response['date'];
 $salt = $response['salt'];
 $url = $response['url'];
 $hash = sha1($salt . $url);
-$date = gmdate("Y-m-d");
 
 if (!file_exists("done/$date")) {
     mkdir("done/$date");

@@ -6,14 +6,15 @@ if ($_POST['password'] != $password) {
 }
 
 $dir = scandir('todo');
-foreach ($dir as $hash) {
-    if (is_file("todo/$hash")) {
-        $request = json_decode(file_get_contents("todo/$hash"), true);
+foreach ($dir as $filename) {
+    if (is_file("todo/$filename")) {
+        $request = json_decode(file_get_contents("todo/$filename"), true);
+        $date = $request['date'];
         $salt = $request['salt'];
         $url = $request['url'];
-        if (sha1($salt . $url) == $hash) {
-            unlink("todo/$hash");
-            die(json_encode(['salt' => $salt, 'url' => $url]));
+        if ($date . sha1($salt . $url) == $filename) {
+            unlink("todo/$filename");
+            die(json_encode(['date' => $date, 'salt' => $salt, 'url' => $url]));
         }
     }
 }
