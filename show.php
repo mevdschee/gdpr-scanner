@@ -30,7 +30,7 @@ $reponse = json_decode(file_get_contents("done/$date/$hash"), true);
 </style>
 
 <h1>
-    <?php echo $reponse['url']; ?>
+    <?php echo $reponse['url']; ?><br/>
     <small><?php echo $filename; ?></small>
 </h1>
 <p>Scan date: <?php echo DateTime::createFromFormat('Ymd', $date)->format('Y-m-d'); ?></p>
