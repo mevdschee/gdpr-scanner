@@ -58,5 +58,5 @@ $reponse = json_decode(file_get_contents("done/$date/$hash"), true);
     *) IP address information from: <a href="https://ip-api.com">ip-api.com</a>
 </p>
 <form action="../"><input type="submit" value="Close" /></form>
-<p><hr/><small><?php echo $filename; ?></small></p>
+<p><small><?php echo $filename; ?></small></p>
 <?php include 'footer.php';?>
