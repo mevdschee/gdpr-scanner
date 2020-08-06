@@ -23,8 +23,9 @@ $reponse = json_decode(file_get_contents("done/$date/$hash"), true);
     td {
         border-top: 1px solid black
     }
-    small{
-        font-size: smaller;
+
+    h1 small{
+        font-size: 2px;
     }
 </style>
 
