@@ -43,7 +43,7 @@ $reponse = json_decode(gzdecode(file_get_contents("done/$date/$hash")), true);
     <?php foreach ($reponse['lines'] as $line): ?>
         <tr>
             <?php foreach ($line as $cell): ?>
-                <td><?php echo htmlentities($cell); ?></td>
+                <td><?php echo htmlentities($cell) ?: ''; ?></td>
             <?php endforeach;?>
         </tr>
     <?php endforeach;?>
