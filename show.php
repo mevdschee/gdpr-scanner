@@ -25,7 +25,7 @@ $reponse = json_decode(file_get_contents("done/$date/$hash"), true);
     }
 
     h1 small{
-        font-size: 2px;
+        font-size: 7px;
     }
 </style>
 
