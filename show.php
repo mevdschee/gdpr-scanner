@@ -5,7 +5,6 @@ $hash = substr($filename, 8);
 if (!file_exists("done/$date/$hash")) {
     die(header('Location: ./'));
 }
-$md5 = md5_file("done/$date/$hash");
 $reponse = json_decode(file_get_contents("done/$date/$hash"), true);
 
 ?>
@@ -53,6 +52,5 @@ $reponse = json_decode(file_get_contents("done/$date/$hash"), true);
     5) Organization of the domain's IP address*<br />
     *) IP address information from: <a href="https://ip-api.com">ip-api.com</a>
 </p>
-<p><small><?php echo $md5; ?></small></p>
 <form action="../"><input type="submit" value="Close" /></form>
 <?php include 'footer.php';?>
