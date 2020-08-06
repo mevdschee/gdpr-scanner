@@ -27,7 +27,7 @@ $reponse = json_decode(file_get_contents("done/$date/$hash"), true);
 </style>
 
 <h1><?php echo $reponse['url']; ?></h1>
-<p>Scanner date: <?php echo substr($date, 0, 4); ?>-<?php echo substr($date, 0, 4); ?>-<?php echo substr($date, 0, 4); ?></p>
+<p>Scan date: <?php echo substr($date, 0, 4); ?>-<?php echo substr($date, 4, 2); ?>-<?php echo substr($date, 6, 2); ?></p>
 <p>Scanner location: Amsterdam</p>
 <table cellspacing="0">
     <tr>
