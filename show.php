@@ -2,7 +2,7 @@
 $filename = trim($_SERVER['PATH_INFO'], '/');
 $date = substr($filename, 0, 8);
 $hash = substr($filename, 8);
-if (!file_exists("done/$date/$hash")) {
+if (!file_exists("done/$date/$hash.gz")) {
     die(header('Location: ./'));
 }
 $reponse = json_decode(gzdecode(file_get_contents("done/$date/$hash.gz")), true);
