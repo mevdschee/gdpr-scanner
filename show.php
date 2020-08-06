@@ -9,7 +9,7 @@ $md5 = md5_file("done/$date/$hash");
 $reponse = json_decode(file_get_contents("done/$date/$hash"), true);
 
 ?>
-<?php include 'header.php'; ?>
+<?php include 'header.php';?>
 <style>
     th {
         text-align: left;
@@ -37,13 +37,13 @@ $reponse = json_decode(file_get_contents("done/$date/$hash"), true);
         <th>Country<sup>4</sup></th>
         <th>Organization<sup>5</sup></th>
     </tr>
-    <?php foreach ($reponse['lines'] as $line) : ?>
+    <?php foreach ($reponse['lines'] as $line): ?>
         <tr>
-            <?php foreach ($line as $cell) : ?>
+            <?php foreach ($line as $cell): ?>
                 <td><?php echo htmlentities($cell); ?></td>
-            <?php endforeach; ?>
+            <?php endforeach;?>
         </tr>
-    <?php endforeach; ?>
+    <?php endforeach;?>
 </table>
 <p>
     1) Domain to which connections where made<br />
@@ -53,6 +53,6 @@ $reponse = json_decode(file_get_contents("done/$date/$hash"), true);
     5) Organization of the domain's IP address*<br />
     *) IP address information from: <a href="https://ip-api.com">ip-api.com</a>
 </p>
-<p><?php echo $md5; ?></p>
+<p><small><?php echo $md5; ?></small></p>
 <form action="../"><input type="submit" value="Close" /></form>
-<?php include 'footer.php'; ?>
+<?php include 'footer.php';?>
