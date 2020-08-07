@@ -46,7 +46,7 @@ $reponse = json_decode(gzdecode(file_get_contents("done/$date/$hash")), true);
                 <td>
                     <?php if (is_array($cell)): ?>
                         <?php foreach ($cell as $flag): ?>
-		                    <?php echo "<a href=\"../flag_$flag.php\">$flag</a>"; ?>
+		                    <?php echo "<a href=\"../flag_$flag.php\">$flag</a> "; ?>
 		                <?php endforeach;?>
                     <?php else: ?>
                         <?php echo htmlentities($cell) ?: '' ?>
