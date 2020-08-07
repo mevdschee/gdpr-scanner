@@ -8,8 +8,8 @@ if (!file_exists("done/$date/$hash")) {
 $reponse = json_decode(gzdecode(file_get_contents("done/$date/$hash")), true);
 
 $comments = [
-    'fonts.googleapis.com' => '<a href"https://github.com/google/fonts/issues/1495">GDPR compliance</a>',
-    'fonts.gstatic.com' => '<a href"https://github.com/google/fonts/issues/1495">GDPR compliance</a>',
+    'g_fonts' => 'https://github.com/google/fonts/issues/1495',
+    'ga_aip' => 'https://support.google.com/analytics/answer/2763052',
 ];
 ?>
 <?php include 'header.php';?>
@@ -39,39 +39,35 @@ $comments = [
 <table cellspacing="0">
     <tr>
         <th>Domain<sup>1</sup></th>
-        <th>Ping<sup>2</sup></th>
-        <th>EU<sup>3</sup></th>
-        <th>Country<sup>4</sup></th>
-        <th>Organization<sup>5</sup></th>
-        <th>Anonimize flag<sup>6</sup></th>
-        <th>Comment</th>
+        <th>Flags<sup>2</sup></th>
+        <th>Ping<sup>3</sup></th>
+        <th>EU<sup>4</sup></th>
+        <th>Country<sup>5</sup></th>
+        <th>Organization<sup>6</sup></th>
     </tr>
-    <?php foreach ($reponse['lines'] as $line): ?>
+    <?php foreach ($reponse['lines'] as $i => $line): ?>
         <tr>
-            <?php foreach ($line as $cell): ?>
+            <?php foreach ($line as $j => $cell): ?>
                 <td>
-                <?php
-                if ($cell === true):
-                    echo 'Yes';
-                elseif ($cell === false):
-                    echo 'No';
-                else:
-                    echo htmlentities($cell) ?: '';
-                endif;
-                ?>
+                    <?php if (is_array($cell)): ?>
+                        <?php foreach ($cell as $flag): ?>
+		                    <?php echo "<a href=\"../$flag.html\">$flag</a>"; ?>
+		                <?php endforeach;?>
+                    <?php else: ?>
+                        <?php echo htmlentities($cell) ?: '' ?>
+                    <?php endif;?>
                 </td>
             <?php endforeach;?>
-            <td><?php echo $comments[$line[0]] ?? ''; ?></td>
         </tr>
     <?php endforeach;?>
 </table>
 <p>
     1) Domain to which connections where made<br />
-    2) Ping time to the domain in milliseconds<br />
-    3) EU country for domain's IP address*<br />
-    4) Country of the domain's IP address*<br />
-    5) Organization of the domain's IP address*<br />
-    6) Whether an 'anonimyzeIp' flag was detected (Google Analytics only)*<br />
+    2) Clickable flags with additional info<br />
+    3) Ping time to the domain in milliseconds<br />
+    4) EU country for domain's IP address*<br />
+    5) Country of the domain's IP address*<br />
+    6) Organization of the domain's IP address*<br />
     *) IP address information from: <a href="https://ip-api.com">ip-api.com</a>
 </p>
 <form action="../"><input type="submit" value="Close" /></form>
