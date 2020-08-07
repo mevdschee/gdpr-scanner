@@ -6,11 +6,6 @@ if (!file_exists("done/$date/$hash")) {
     die(header('Location: ./'));
 }
 $reponse = json_decode(gzdecode(file_get_contents("done/$date/$hash")), true);
-
-$comments = [
-    'g_fonts' => 'https://github.com/google/fonts/issues/1495',
-    'ga_aip' => 'https://support.google.com/analytics/answer/2763052',
-];
 ?>
 <?php include 'header.php';?>
 <style>
@@ -51,7 +46,7 @@ $comments = [
                 <td>
                     <?php if (is_array($cell)): ?>
                         <?php foreach ($cell as $flag): ?>
-		                    <?php echo "<a href=\"../$flag.html\">$flag</a>"; ?>
+		                    <?php echo "<a href=\"../flag_$flag.php\">$flag</a>"; ?>
 		                <?php endforeach;?>
                     <?php else: ?>
                         <?php echo htmlentities($cell) ?: '' ?>
