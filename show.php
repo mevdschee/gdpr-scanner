@@ -7,6 +7,10 @@ if (!file_exists("done/$date/$hash")) {
 }
 $reponse = json_decode(gzdecode(file_get_contents("done/$date/$hash")), true);
 
+$comments = [
+    'fonts.googleapis.com' => '<a href"https://github.com/google/fonts/issues/1495">GDPR compliance</a>',
+    'fonts.gstatic.com' => '<a href"https://github.com/google/fonts/issues/1495">GDPR compliance</a>',
+];
 ?>
 <?php include 'header.php';?>
 <style>
@@ -39,12 +43,25 @@ $reponse = json_decode(gzdecode(file_get_contents("done/$date/$hash")), true);
         <th>EU<sup>3</sup></th>
         <th>Country<sup>4</sup></th>
         <th>Organization<sup>5</sup></th>
+        <th>Anonimize flag<sup>6</sup></th>
+        <th>Comment</th>
     </tr>
     <?php foreach ($reponse['lines'] as $line): ?>
         <tr>
             <?php foreach ($line as $cell): ?>
-                <td><?php echo htmlentities($cell) ?: ''; ?></td>
+                <td>
+                <?php
+                if ($cell === true):
+                    echo 'Yes';
+                elseif ($cell === false):
+                    echo 'No';
+                else:
+                    echo htmlentities($cell) ?: '';
+                endif;
+                ?>
+                </td>
             <?php endforeach;?>
+            <td><?php echo $comments[$line[0]] ?? ''; ?></td>
         </tr>
     <?php endforeach;?>
 </table>
@@ -54,6 +71,7 @@ $reponse = json_decode(gzdecode(file_get_contents("done/$date/$hash")), true);
     3) EU country for domain's IP address*<br />
     4) Country of the domain's IP address*<br />
     5) Organization of the domain's IP address*<br />
+    6) Whether an 'anonimyzeIp' flag was detected (Google Analytics only)*<br />
     *) IP address information from: <a href="https://ip-api.com">ip-api.com</a>
 </p>
 <form action="../"><input type="submit" value="Close" /></form>
