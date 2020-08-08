@@ -7,7 +7,7 @@ if (!file_exists("done/$date/$hash")) {
 }
 $reponse = json_decode(gzdecode(file_get_contents("done/$date/$hash")), true);
 ?>
-<?php include 'header.php';?>
+<?php include 'header.php'; ?>
 <style>
     th {
         text-align: left;
@@ -23,7 +23,7 @@ $reponse = json_decode(gzdecode(file_get_contents("done/$date/$hash")), true);
         border-top: 1px solid black
     }
 
-    h1 small{
+    h1 small {
         font-family: sans-serif;
         font-size: 8px;
     }
@@ -31,6 +31,7 @@ $reponse = json_decode(gzdecode(file_get_contents("done/$date/$hash")), true);
 <h1><?php echo $reponse['url']; ?></h1>
 <p>Scan date: <?php echo date('Y-m-d H:i:s', $reponse['time']); ?></p>
 <p>Scanner location: Amsterdam</p>
+<p>Scanned with: Chrome Incognito (no consent)</p>
 <table cellspacing="0">
     <tr>
         <th>Domain<sup>1</sup></th>
@@ -40,21 +41,21 @@ $reponse = json_decode(gzdecode(file_get_contents("done/$date/$hash")), true);
         <th>Country<sup>5</sup></th>
         <th>Organization<sup>6</sup></th>
     </tr>
-    <?php foreach ($reponse['lines'] as $i => $line): ?>
+    <?php foreach ($reponse['lines'] as $i => $line) : ?>
         <tr>
-            <?php foreach ($line as $j => $cell): ?>
+            <?php foreach ($line as $j => $cell) : ?>
                 <td>
-                    <?php if (is_array($cell)): ?>
-                        <?php foreach ($cell as $flag): ?>
-		                    <?php echo "<a href=\"../flag_$flag.php\">$flag</a> "; ?>
-		                <?php endforeach;?>
-                    <?php else: ?>
+                    <?php if (is_array($cell)) : ?>
+                        <?php foreach ($cell as $flag) : ?>
+                            <?php echo "<a href=\"../flag_$flag.php\">$flag</a> "; ?>
+                        <?php endforeach; ?>
+                    <?php else : ?>
                         <?php echo htmlentities($cell) ?: '' ?>
-                    <?php endif;?>
+                    <?php endif; ?>
                 </td>
-            <?php endforeach;?>
+            <?php endforeach; ?>
         </tr>
-    <?php endforeach;?>
+    <?php endforeach; ?>
 </table>
 <p>
     1) Domain to which connections where made<br />
@@ -66,5 +67,5 @@ $reponse = json_decode(gzdecode(file_get_contents("done/$date/$hash")), true);
     *) IP address information from: <a href="https://ip-api.com">ip-api.com</a>
 </p>
 <form action="../"><input type="submit" value="Close" /></form>
-<?php include 'footer.php';?>
+<?php include 'footer.php'; ?>
 <!-- <?php echo $filename; ?> -->
