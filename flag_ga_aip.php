@@ -1,6 +1,6 @@
 <?php include 'header.php'; ?>
 <h1>Google Analytics</h1>
 <p>
-    You seem to request anonymization of IP addresses that you send to Google Analytics.
+    Anonymization of IP addresses that are sent to Google Analytics is requested.
 </p>
 <?php include 'footer.php'; ?>
