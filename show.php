@@ -31,7 +31,7 @@ $reponse = json_decode(gzdecode(file_get_contents("done/$date/$hash")), true);
 <h1><?php echo $reponse['url']; ?></h1>
 <p>Scan date: <?php echo date('Y-m-d H:i:s', $reponse['time']); ?></p>
 <p>Scanner location: Amsterdam</p>
-<p>Scanned with: Chrome Incognito (no consent)</p>
+<p>Scanned with: Chrome in "incognito" mode (no consent)</p>
 <table cellspacing="0">
     <tr>
         <th>Domain<sup>1</sup></th>
