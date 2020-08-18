@@ -43,6 +43,9 @@ $cookieFields = ['name', 'size', 'domain', 'path', 'expires', 'httpOnly', 'secur
         <th>Country<sup>6</sup></th>
         <th>Organization<sup>7</sup></th>
     </tr>
+    <?php if (count($reponse['data']['domains']) == 0): ?>
+        <tr><td colspan="7">No domains found</td></tr>
+    <?php endif;?>
     <?php foreach (array_values($reponse['data']['domains']) as $i => $line): ?>
         <tr>
             <?php foreach ($line as $j => $cell): ?>
@@ -76,6 +79,9 @@ $cookieFields = ['name', 'size', 'domain', 'path', 'expires', 'httpOnly', 'secur
         <th><?php echo $i == 0 ? 'Cookie' : ucwords($field) ?><sup><?php echo ($i + 1) ?></sup></th>
         <?php endforeach;?>
     </tr>
+    <?php if (count($reponse['data']['cookies']) == 0): ?>
+        <tr><td colspan="<?php echo count($cookieFields); ?>">No cookies found</td></tr>
+    <?php endif;?>
     <?php foreach ($reponse['data']['cookies'] as $cookie): ?>
         <tr>
             <?php foreach ($cookieFields as $field): ?>
@@ -109,6 +115,9 @@ $cookieFields = ['name', 'size', 'domain', 'path', 'expires', 'httpOnly', 'secur
         <th>Entry<sup>2</sup></th>
         <th>Size<sup>3</sup></th>
     </tr>
+    <?php if (count($reponse['data']['sessionStorage']) + count($reponse['data']['localStorage']) == 0): ?>
+        <tr><td colspan="3">No entries found</td></tr>
+    <?php endif;?>
     <?php foreach ($reponse['data']['sessionStorage'] as $pair): ?>
         <tr>
             <td>SessionStorage</td>
