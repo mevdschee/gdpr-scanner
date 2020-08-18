@@ -2,7 +2,7 @@
 include 'config.php';
 
 if ($_POST['password'] != $password) {
-    die('Access denied');
+    die('Access denied [' . $_POST['password'] . ']');
 }
 
 $dir = scandir('todo');
