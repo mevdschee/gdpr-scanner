@@ -6,6 +6,7 @@ if (!file_exists("done/$date/$hash")) {
     die(header('Location: ./'));
 }
 $reponse = json_decode(gzdecode(file_get_contents("done/$date/$hash")), true);
+$cookieFields = ['name', 'value', 'domain', 'path', 'expires', 'size', 'httpOnly', 'secure', 'session', 'priority', 'sameSite'];
 ?>
 <?php include 'header.php';?>
 <style>
@@ -72,23 +73,15 @@ $reponse = json_decode(gzdecode(file_get_contents("done/$date/$hash")), true);
 <h3>Cookies</h3p>
 <table cellspacing="0">
     <tr>
-        <th>name<sup>1</sup></th>
-        <th>value<sup>2</sup></th>
-        <th>domain<sup>3</sup></th>
-        <th>path<sup>4</sup></th>
-        <th>expires<sup>5</sup></th>
-        <th>size<sup>6</sup></th>
-        <th>httpOnly<sup>7</sup></th>
-        <th>secure<sup>8</sup></th>
-        <th>session<sup>9</sup></th>
-        <th>priority<sup>10</sup></th>
-        <th>sameSite<sup>11</sup></th>
+        <?php foreach ($cookieFields as $i => $field): ?>
+        <th><?php echo $field ?><sup><?php echo $i ?></sup></th>
+        <?php endforeach;?>
     </tr>
-    <?php foreach (array_values($reponse['data']['cookies']) as $i => $line): ?>
+    <?php foreach ($reponse['data']['cookies'] as $cookie): ?>
         <tr>
-            <?php foreach ($line as $j => $cell): ?>
+            <?php foreach ($cookieFields as $field): ?>
                 <td>
-                    <?php echo htmlentities(var_export($cell, true)) ?: '' ?>
+                    <?php echo htmlentities(var_export($cookie[$field], true)) ?: '' ?>
                 </td>
             <?php endforeach;?>
         </tr>
