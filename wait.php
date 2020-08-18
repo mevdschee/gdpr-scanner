@@ -5,7 +5,7 @@ $hash = substr($filename, 8);
 if (file_exists("done/$date/$hash")) {
     die(header('Location: ../show.php/' . $filename));
 }
-$text = file_exists("todo/$filename") ? 'Wait' : 'Executing';
+$text = file_exists("todo/$filename") ? 'Waiting' : 'Executing';
 ?>
 <?php include 'header.php';?>
 <form action="../">
