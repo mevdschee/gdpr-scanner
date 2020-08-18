@@ -42,7 +42,7 @@ $reponse = json_decode(gzdecode(file_get_contents("done/$date/$hash")), true);
         <th>Country<sup>6</sup></th>
         <th>Organization<sup>7</sup></th>
     </tr>
-    <?php foreach ($reponse['lines'] as $i => $line): ?>
+    <?php foreach (array_values($reponse['domains']) as $i => $line): ?>
         <tr>
             <?php foreach ($line as $j => $cell): ?>
                 <td>
