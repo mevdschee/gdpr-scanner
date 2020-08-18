@@ -106,7 +106,7 @@ $cookieFields = ['name', 'size', 'domain', 'path', 'expires', 'httpOnly', 'secur
 <table cellspacing="0">
     <tr>
         <th>Type<sup>1</sup></th>
-        <th>Key<sup>2</sup></th>
+        <th>Entry<sup>2</sup></th>
         <th>Size<sup>3</sup></th>
     </tr>
     <?php foreach ($reponse['data']['sessionStorage'] as $pair): ?>
@@ -126,8 +126,8 @@ $cookieFields = ['name', 'size', 'domain', 'path', 'expires', 'httpOnly', 'secur
 </table>
 <p>
     1) Type of the storage<br />
-    2) Name of the cookie<br />
-    3) Size of the cookie in bytes<br />
+    2) Name of the entry<br />
+    3) Size of the entry in bytes<br />
 </p>
 
 <form action="../"><input type="submit" value="Close" /></form>
