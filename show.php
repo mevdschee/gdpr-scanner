@@ -92,6 +92,16 @@ $cookieFields = ['name', 'value', 'domain', 'path', 'expires', 'httpOnly', 'secu
         </tr>
     <?php endforeach;?>
 </table>
+<p>
+    1) Name of the cookie<br />
+    2) Value of the cookie<br />
+    3) Domain the cookie is valid for<br />
+    4) Path the cookie is valid for<br />
+    5) Expiry date of the cookie<br />
+    6) Access denied from JavaScript?<br />
+    7) Send cookie only over SSL?<br />
+    8) SameSite 'Strict' restricts tracking
+</p>
 
 <form action="../"><input type="submit" value="Close" /></form>
 <?php include 'footer.php';?>
