@@ -72,7 +72,6 @@ $cookieFields = ['name', 'value', 'domain', 'path', 'expires', 'size', 'httpOnly
 
 <table cellspacing="0">
     <tr>
-        <th><?php echo $field ?><sup><?php echo ($i + 1) ?></sup></th>
         <?php foreach ($cookieFields as $i => $field): ?>
         <th><?php echo $i == 0 ? 'Cookie' : ucwords($field) ?><sup><?php echo ($i + 1) ?></sup></th>
         <?php endforeach;?>
