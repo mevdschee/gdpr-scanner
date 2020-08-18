@@ -74,7 +74,7 @@ $cookieFields = ['name', 'value', 'domain', 'path', 'expires', 'size', 'httpOnly
 <table cellspacing="0">
     <tr>
         <?php foreach ($cookieFields as $i => $field): ?>
-        <th><?php echo $field ?><sup><?php echo $i ?></sup></th>
+        <th><?php echo $field ?><sup><?php echo ($i + 1) ?></sup></th>
         <?php endforeach;?>
     </tr>
     <?php foreach ($reponse['data']['cookies'] as $cookie): ?>
