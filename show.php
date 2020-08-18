@@ -70,11 +70,11 @@ $cookieFields = ['name', 'value', 'domain', 'path', 'expires', 'size', 'httpOnly
     *) IP address information from: <a href="https://ip-api.com">ip-api.com</a>
 </p>
 
-<h3>Cookies</h3p>
 <table cellspacing="0">
     <tr>
-        <?php foreach ($cookieFields as $i => $field): ?>
         <th><?php echo $field ?><sup><?php echo ($i + 1) ?></sup></th>
+        <?php foreach ($cookieFields as $i => $field): ?>
+        <th><?php echo $i == 0 ? 'Cookie' : ucwords($field) ?><sup><?php echo ($i + 1) ?></sup></th>
         <?php endforeach;?>
     </tr>
     <?php foreach ($reponse['data']['cookies'] as $cookie): ?>
