@@ -6,7 +6,7 @@ if (!file_exists("done/$date/$hash")) {
     die(header('Location: ./'));
 }
 $reponse = json_decode(gzdecode(file_get_contents("done/$date/$hash")), true);
-$cookieFields = ['name', 'size', 'domain', 'path', 'session', 'httpOnly', 'secure', 'sameSite'];
+$cookieFields = ['name', 'value', 'domain', 'path', 'session', 'httpOnly', 'secure', 'sameSite'];
 ?>
 <?php include 'header.php';?>
 <style>
@@ -80,7 +80,11 @@ $cookieFields = ['name', 'size', 'domain', 'path', 'session', 'httpOnly', 'secur
         <tr>
             <?php foreach ($cookieFields as $field): ?>
                 <td>
-                    <?php echo htmlentities(var_export($cookie[$field], true)) ?: '' ?>
+                    <?php if ($field == 'value'): ?>
+                        <a href="data:text/plain;base64,<?php echo base64_encode($cookie[$field]); ?>"><?php echo strlen($cookie[$field]) . ' bytes'; ?></a>
+                    <?php else: ?>
+                        <?php echo htmlentities(var_export($cookie[$field], true)) ?: '' ?>
+                    <?php endif;?>
                 </td>
             <?php endforeach;?>
         </tr>
