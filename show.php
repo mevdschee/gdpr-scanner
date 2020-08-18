@@ -6,7 +6,7 @@ if (!file_exists("done/$date/$hash")) {
     die(header('Location: ./'));
 }
 $reponse = json_decode(gzdecode(file_get_contents("done/$date/$hash")), true);
-$cookieFields = ['name', 'value', 'domain', 'path', 'expires', 'size', 'httpOnly', 'secure', 'session', 'priority', 'sameSite'];
+$cookieFields = ['name', 'size', 'domain', 'path', 'session', 'httpOnly', 'secure', 'sameSite'];
 ?>
 <?php include 'header.php';?>
 <style>
