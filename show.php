@@ -103,6 +103,33 @@ $cookieFields = ['name', 'size', 'domain', 'path', 'expires', 'httpOnly', 'secur
     8) SameSite 'Strict' restricts tracking
 </p>
 
+<table cellspacing="0">
+    <tr>
+        <th>Type<sup>1</sup></th>
+        <th>Key<sup>2</sup></th>
+        <th>Size<sup>3</sup></th>
+    </tr>
+    <?php foreach ($reponse['data']['sessionStorage'] as $pair): ?>
+        <tr>
+            <td>SessionStorage</td>
+            <td><?php echo htmlentities($pair['key']) ?: '' ?></td>
+            <td><?php echo strlen($pair['value']) ?></td>
+        </tr>
+    <?php endforeach;?>
+    <?php foreach ($reponse['data']['localStorage'] as $pair): ?>
+        <tr>
+            <td>LocalStorage</td>
+            <td><?php echo htmlentities($pair['key']) ?: '' ?></td>
+            <td><?php echo strlen($pair['value']) ?></td>
+        </tr>
+    <?php endforeach;?>
+</table>
+<p>
+    1) Type of the storage<br />
+    2) Name of the cookie<br />
+    3) Size of the cookie in bytes<br />
+</p>
+
 <form action="../"><input type="submit" value="Close" /></form>
 <?php include 'footer.php';?>
 <!-- <?php echo $filename; ?> -->
