@@ -80,7 +80,7 @@ $cookieFields = ['name', 'value', 'domain', 'path', 'expires', 'size', 'httpOnly
     <?php foreach ($reponse['data']['cookies'] as $cookie): ?>
         <tr>
             <?php foreach ($cookieFields as $field): ?>
-                <td style="max-width: 200px;">
+                <td style="max-width: 200px; overflow: hidden;">
                     <?php echo htmlentities(var_export($cookie[$field], true)) ?: '' ?>
                 </td>
             <?php endforeach;?>
