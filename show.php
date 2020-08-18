@@ -83,7 +83,7 @@ $cookieFields = ['name', 'value', 'domain', 'path', 'session', 'expires', 'httpO
                     <?php if ($field == 'value'): ?>
                         <a href="data:text/plain;base64,<?php echo base64_encode($cookie[$field]); ?>"><?php echo strlen($cookie[$field]) . ' bytes'; ?></a>
                     <?php elseif ($field == 'expires'): ?>
-                        <?php echo date('Y-m-d', (int) $cookie[$field]); ?></a>
+                        <?php echo $cookie['session'] ? '-' : date('Y-m-d', (int) $cookie[$field]); ?></a>
                     <?php else: ?>
                         <?php echo htmlentities(var_export($cookie[$field], true)) ?: '' ?>
                     <?php endif;?>
