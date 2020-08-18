@@ -79,10 +79,10 @@ $reponse = json_decode(gzdecode(file_get_contents("done/$date/$hash")), true);
         <th>expires<sup>5</sup></th>
         <th>size<sup>6</sup></th>
         <th>httpOnly<sup>7</sup></th>
-        <th>secure<sup>7</sup></th>
-        <th>session<sup>7</sup></th>
-        <th>priority<sup>7</sup></th>
-        <th>sameSite<sup>7</sup></th>
+        <th>secure<sup>8</sup></th>
+        <th>session<sup>9</sup></th>
+        <th>priority<sup>10</sup></th>
+        <th>sameSite<sup>11</sup></th>
     </tr>
     <?php foreach (array_values($reponse['data']['cookies']) as $i => $line): ?>
         <tr>
