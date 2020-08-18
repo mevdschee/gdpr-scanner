@@ -69,22 +69,26 @@ $reponse = json_decode(gzdecode(file_get_contents("done/$date/$hash")), true);
     *) IP address information from: <a href="https://ip-api.com">ip-api.com</a>
 </p>
 
-<p>Cookies</p>
+<h3>Cookies</h3p>
 <table cellspacing="0">
     <tr>
-        <th>Domain<sup>1</sup></th>
-        <th>Flags<sup>2</sup></th>
-        <th>Ping<sup>3</sup></th>
-        <th>Hostname<sup>4</sup></th>
-        <th>EU<sup>5</sup></th>
-        <th>Country<sup>6</sup></th>
-        <th>Organization<sup>7</sup></th>
+        <th>name<sup>1</sup></th>
+        <th>value<sup>2</sup></th>
+        <th>domain<sup>3</sup></th>
+        <th>path<sup>4</sup></th>
+        <th>expires<sup>5</sup></th>
+        <th>size<sup>6</sup></th>
+        <th>httpOnly<sup>7</sup></th>
+        <th>secure<sup>7</sup></th>
+        <th>session<sup>7</sup></th>
+        <th>priority<sup>7</sup></th>
+        <th>sameSite<sup>7</sup></th>
     </tr>
     <?php foreach (array_values($reponse['data']['cookies']) as $i => $line): ?>
         <tr>
             <?php foreach ($line as $j => $cell): ?>
                 <td>
-                    <?php echo htmlentities($cell) ?: '' ?>
+                    <?php echo htmlentities(var_export($cell, true)) ?: '' ?>
                 </td>
             <?php endforeach;?>
         </tr>
