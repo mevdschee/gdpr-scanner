@@ -84,6 +84,8 @@ $cookieFields = ['name', 'value', 'domain', 'path', 'expires', 'httpOnly', 'secu
                         <a href="data:text/plain;base64,<?php echo base64_encode($cookie[$field]); ?>"><?php echo strlen($cookie[$field]) . ' bytes'; ?></a>
                     <?php elseif ($field == 'expires'): ?>
                         <?php echo $cookie['session'] ? 'session' : date('Y-m-d', (int) $cookie[$field]); ?></a>
+                    <?php elseif ($field == 'sameSite'): ?>
+                        <?php echo $cookie[$field] ?: 'N/A'; ?></a>
                     <?php else: ?>
                         <?php echo htmlentities(var_export($cookie[$field], true)) ?: '' ?>
                     <?php endif;?>
