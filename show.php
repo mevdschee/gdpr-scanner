@@ -94,7 +94,7 @@ $cookieFields = ['name', 'size', 'domain', 'path', 'expires', 'httpOnly', 'secur
 </table>
 <p>
     1) Name of the cookie<br />
-    2) Value of the cookie<br />
+    2) Size of the cookie in bytes<br />
     3) Domain the cookie is valid for<br />
     4) Path the cookie is valid for<br />
     5) Expiry date of the cookie<br />
